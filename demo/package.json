@@ -1,0 +1,55 @@
+{
+  "name": "react-structured-state",
+  "version": "0.1.0",
+  "author": {
+    "name": "ysuzuki19",
+    "url": "https://ysuzuki19.github.io"
+  },
+  "repository": "https://github.com/ysuzuki19/react-structured-state.git",
+  "private": false,
+  "dependencies": {
+    "@types/node": "^16.10.1",
+    "@types/react": "^17.0.0",
+    "react": "^17.0.2",
+    "recoil": "^0.4.1",
+    "typescript": "^4.1.2",
+    "web-vitals": "^2.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start demo/index.ts",
+    "dev": "BROWSER=NONE npm start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predoc": "typedoc src/**/**",
+    "doc": "serve docs"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.1",
+    "@types/react-dom": "^17.0.9",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "serve": "^12.0.1",
+    "typedoc": "^0.22.4"
+  }
+}
