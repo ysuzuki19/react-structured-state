@@ -1,4 +1,5 @@
 import typescript from '@rollup/plugin-typescript';
+import dts from 'rollup-plugin-dts';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 
@@ -18,6 +19,15 @@ export default [
         extensions: ['.ts'],
       }),
     ],
+  },
+
+  {
+    input: entry,
+    output: {
+      file: 'dist/index.d.ts',
+      format: 'es',
+    },
+    plugins: [dts()],
   },
 
   {

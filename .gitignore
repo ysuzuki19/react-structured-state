@@ -104,5 +104,6 @@ dist
 .tern-port
 
 demo/public/
+demo/build/
 yarn.lock
 package-lock.json

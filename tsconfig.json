@@ -7,7 +7,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    // "declaration": true, // commented for rollup.js
+    "declaration": false,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
     "module": "esnext",
@@ -17,5 +17,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["./lib/**/*"]
+  "include": ["./lib/**/*"],
+  "exclude": ["./node_modules/", "./dist/"]
 }
