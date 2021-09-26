@@ -49,7 +49,7 @@ const App = (): JSX.Element => {
   }, [arr]);
 
   return (
-		...
+    ...
   );
 };
 
@@ -67,7 +67,7 @@ const App = (): JSX.Element => {
   }, [arr]);
 
   return (
-		...
+    ...
   );
 };
 

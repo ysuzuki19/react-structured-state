@@ -1,7 +1,7 @@
 {
   "name": "react-structured-state",
   "description": "React custom hooks for handling structure(array) with normal state or recoil state",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "ysuzuki19",
     "url": "https://ysuzuki19.github.io"
@@ -35,6 +35,8 @@
   },
   "scripts": {
     "build": "rollup -c",
+    "prepublish": "npm run build",
+    "publish": "npm publish",
     "predoc": "typedoc src/**/**",
     "doc": "serve docs"
   },
