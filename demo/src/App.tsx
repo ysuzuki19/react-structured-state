@@ -1,8 +1,8 @@
 import { FC, useEffect } from 'react';
 import { Box, Button, Divider, Grid, Paper, Typography } from '@mui/material';
 
-// import { useArray, useRecoilArray } from './StructuredState';
-import { useRecoilArray } from './structured-state';
+// import { useArray } from 'react-structured-state';
+import { useRecoilArray } from 'react-structured-state';
 import { arrayState } from './store/arrayState';
 
 const ActionGroup: FC<{ title: string }> = ({ title, children }) => {

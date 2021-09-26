@@ -105,5 +105,9 @@ dist
 
 demo/public/
 demo/build/
+demo/.firebaserc
+demo/firebase.json
+demo/.firebase/
+
 yarn.lock
 package-lock.json
