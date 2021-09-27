@@ -1,20 +1,62 @@
 # React Structured State
 
+## About
+
+If we use react state in react-hooks, code tends to be long and compilicated for updating array.
+
+This package make your code simplly for update array state.
+
 ## Install
 
 ```bash
 $ npm install react-structured-state
 ```
 
-## Demo
+## Demo App
 
 https://react-structured-state.web.app
 
-## About
+Source code of Demo App is [here](https://github.com/ysuzuki19/react-structured-state/tree/main/demo)
 
-If we use react state in react-hooks, code tends to be long and compilicated for updating array.
+## How to use
 
-### push 10 to back
+### Define
+
+#### with normal(react hooks) state
+
+```tsx
+import { useArray } from 'react-structured-state';
+
+const App = (): JSX.Element => {
+  const [arr, actionArr] = useArray<number>([1, 2, 3]);
+  return (
+    ...
+  )
+}
+```
+
+#### with recoil state
+
+```tsx
+import { atom } from 'recoil';
+import { useRecoilArray } from 'react-structured-state';
+
+export const arrayState = atom({
+  key: 'arrayState',
+  default: [1, 2, 3],
+});
+
+const App = (): JSX.Element => {
+  const [arr, actionArr] = useRecoilArray<number>(arrayState);
+  return (
+    ...
+  )
+}
+```
+
+### Use Case
+
+#### push 10 to back
 
 ```tsx
 // Before
@@ -24,7 +66,7 @@ setArr((oldarr) => [...oldarr, 10]);
 actionArr.pushBack(10);
 ```
 
-### double all elements
+#### double all elements
 
 ```tsx
 // Before
@@ -41,42 +83,6 @@ actionArr.map((e) => e * 2);
 First value is `Array<T>` used for view array elements.
 
 Second value is object of action like array methods (`map`, `filter`, ...). This is used for change value.
-
-### with normal state
-
-```tsx
-const App = (): JSX.Element => {
-  const [arr, actionArr] = useArray<number>([1, 2, 3]);
-
-  useEffect(() => {
-    console.log(arr);
-  }, [arr]);
-
-  return (
-    ...
-  );
-};
-
-export default App;
-```
-
-### with recoil state
-
-```tsx
-const App = (): JSX.Element => {
-  const [arr, actionArr] = useRecoilArray<number>(arrayState);
-
-  useEffect(() => {
-    console.log(arr);
-  }, [arr]);
-
-  return (
-    ...
-  );
-};
-
-export default App;
-```
 
 ## API
 
