@@ -36,7 +36,7 @@
   "scripts": {
     "test": "jest --env=jsdom --verbose",
     "build": "rollup -c",
-    "prepublish": "npm run build",
+    "prepublish": "npm test && npm run build",
     "publish": "npm publish",
     "predoc": "typedoc src/**/**",
     "doc": "serve docs"
