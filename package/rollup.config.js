@@ -15,6 +15,7 @@ const es_config = {
   plugins: [
     typescript(),
     babel({
+      babelHelpers: 'bundled',
       extensions: ['.ts'],
     }),
   ],
@@ -46,6 +47,7 @@ const umd_config = {
   plugins: [
     typescript(),
     babel({
+      babelHelpers: 'bundled',
       extensions: ['.ts'],
       exclude: 'node_modules/**',
     }),
