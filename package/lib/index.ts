@@ -8,12 +8,16 @@
  */
 
 import { useArray, useRecoilArray } from './array';
+import { useQueue, useRecoilQueue } from './queue';
 
 export { useArray, useRecoilArray };
+export { useQueue, useRecoilQueue };
 
 const StructuredState = {
   useArray,
   useRecoilArray,
+  useQueue,
+  useRecoilQueue
 };
 
 export default StructuredState;
