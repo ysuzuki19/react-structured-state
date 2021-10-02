@@ -6,6 +6,11 @@ If we use react state in react-hooks, code tends to be long and compilicated for
 
 This package make your code simplly for update array state.
 
+This package support following data structure.
+
+- Array
+- Queue
+
 ## Install
 
 ```bash
@@ -76,20 +81,36 @@ setArr((oldarr) => oldarr.map((e) => e * 2));
 actionArr.map((e) => e * 2);
 ```
 
-## Example
+## Design of package
 
-`useArray<T> / useRecoilArray<T>` return two values.
+`useArray/useRecoilArray/useQueue/useRecoilQueue` return two values.
 
-First value is `Array<T>` used for view array elements.
+First value is used for view data.
 
-Second value is object of action like array methods (`map`, `filter`, ...). This is used for change value.
+Second value is object of action methods used for changing value.
 
 ## API
+
+In this sction, `T` mean type of container.
+
+### Array
+
+Define action by following.
+
+```ts
+// with normal state
+const [arr, actionArr] = useArray<number>([1, 2, 3]);
+
+// with recoil state
+const [arr, actionArr] = useRecoilArray<number>(arrayState);
+```
+
+In this case, methods of `actionArr` are following.
 
 | method      | action                               | args                      | args(optional)                    | default         |
 | ----------- | ------------------------------------ | ------------------------- | --------------------------------- | --------------- |
 | setState    | basic setState                       | T[]                       |                                   |                 |
-| pushBack    | add value(s) on back                 | val: T                    | ... vals: T[]                     | none            |
+| pushBack    | add value(s) on back                 | val: T                    | ...vals: T[]                      | none            |
 | pushFront   | add value(s) on front                | val: T,                   | ...vals: T[]                      | none            |
 | insert      | insert value                         | idx: number, val: T       | ...vals: T[]                      | none            |
 | popBack     | remove value(s) on back              |                           | count: number                     | 1               |
@@ -107,3 +128,31 @@ Second value is object of action like array methods (`map`, `filter`, ...). This
 | set         | set value on specified index         | idx:number, val: T        |                                   |                 |
 | erase       | erase element by specified value     | val:T                     |                                   |                 |
 | clear       | clear all elements                   |                           |                                   |                 |
+
+### Queue
+
+Actually, Queue implementation in this library is alias of Array methods. So you can use `useArray` like quque.
+
+But if you use `useQueue`, you can only use few methods. So you can write code that easy to understand (by expressly Queue).
+
+Define action by following.
+
+```ts
+// actual type of state is Array
+
+// with normal state
+const [que, actionQue] = useQueue<number>([1, 2, 3]);
+
+// with recoil state
+const [que, actionQue] = useRecoilQueue<number>(queueState);
+```
+
+In this case, methods of `actionQue` are following.
+
+| method   | action                        | args      | args(optional) | default |
+| -------- | ----------------------------- | --------- | -------------- | ------- |
+| setState | basic setState                | T[]       |                |         |
+| push     | add value(s) on back          | val: T    | ...vals: T[]   | none    |
+| pop      | remove value(s) on front      |           | count: number  | 1       |
+| concat   | add elements of array on back | vals: T[] |                |         |
+| clear    | clear all elements            |           |                |         |
