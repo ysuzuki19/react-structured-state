@@ -2,14 +2,15 @@
 
 ## About
 
-If we use react state in react-hooks, code tends to be long and compilicated for updating array.
+If we use react state in react-hooks, code tends to be long and compilicated for updating data-structure.
 
-This package make your code simplly for update array state.
+This package make your code simplly for update data-structure state.
 
 This package support following data structure.
 
 - Array
 - Queue
+- Set
 
 ## Install
 
@@ -156,3 +157,24 @@ In this case, methods of `actionQue` are following.
 | pop      | remove value(s) on front      |           | count: number  | 1       |
 | concat   | add elements of array on back | vals: T[] |                |         |
 | clear    | clear all elements            |           |                |         |
+
+### Set (HashSet)
+
+```ts
+// actual type of state is Array
+
+// with normal state
+const [st, actionSt] = useSet<number>([1, 2, 3]);
+
+// with recoil state
+const [st, actionSt] = useRecoilSet<number>(stState);
+```
+
+In this case, methods of `actionSt` are following.
+
+| method   | action         | args   | args(optional) | default |
+| -------- | -------------- | ------ | -------------- | ------- |
+| setState | basic setState | Set<T> |                |         |
+| add      | add key(s)     | val: T | ...vals: T[]   | none    |
+| delete   | delete key     | val:T  |                |         |
+| clear    | clear set      |        |                |         |

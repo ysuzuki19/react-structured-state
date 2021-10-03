@@ -9,15 +9,19 @@
 
 import { useArray, useRecoilArray } from './array';
 import { useQueue, useRecoilQueue } from './queue';
+import { useSet, useRecoilSet } from './set';
 
 export { useArray, useRecoilArray };
 export { useQueue, useRecoilQueue };
+export { useSet, useRecoilSet };
 
 const StructuredState = {
   useArray,
   useRecoilArray,
   useQueue,
-  useRecoilQueue
+  useRecoilQueue,
+  useSet,
+  useRecoilSet,
 };
 
 export default StructuredState;
