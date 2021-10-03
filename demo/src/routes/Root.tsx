@@ -20,6 +20,7 @@ const LinkButton = ({ to, title }: LinkButtonProps) => {
 const demos = [
   { to: '/demo/array', title: 'Array Demo' },
   { to: '/demo/queue', title: 'Queue Demo' },
+  { to: '/demo/set', title: 'Set Demo' },
 ];
 
 const Root = () => {
