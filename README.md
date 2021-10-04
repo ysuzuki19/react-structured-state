@@ -11,6 +11,7 @@ This package support following data structure.
 - Array
 - Queue
 - Set
+- Map
 
 ## Install
 
@@ -161,8 +162,6 @@ In this case, methods of `actionQue` are following.
 ### Set (HashSet)
 
 ```ts
-// actual type of state is Array
-
 // with normal state
 const [st, actionSt] = useSet<number>([1, 2, 3]);
 
@@ -178,3 +177,24 @@ In this case, methods of `actionSt` are following.
 | add      | add key(s)     | val: T | ...vals: T[]   | none    |
 | delete   | delete key     | val:T  |                |         |
 | clear    | clear set      |        |                |         |
+
+### Map (HashMap)
+
+```ts
+// with normal state
+const [mp, actionMp] = useMap<string, number>([['a', 1]]);
+
+// with recoil state
+const [mp, actionMp] = useRecoilMap<string, number>(mpState);
+```
+
+In this case, methods of `actionSt` are following.
+
+`TK` means type of key, `TV` means type of value.
+
+| method   | action                | args             | args(optional) | default |
+| -------- | --------------------- | ---------------- | -------------- | ------- |
+| setState | basic setState        | Map<TK,TV>       |                |         |
+| set      | add or update key/val | key: TK, val: TV |                |         |
+| delete   | delete key/val        | key:TK           |                |         |
+| clear    | clear all key/val     |                  |                |         |
