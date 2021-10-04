@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Box, Divider, Grid, Paper, Typography } from '@mui/material';
 
 // import { useSet } from 'react-structured-state';
@@ -11,11 +11,9 @@ import { setState } from '../store/setState';
 const SetDemo = () => {
   // const [st, actionSt] = useSet<number>([1, 2, 3]);
   const [st, actionSt] = useRecoilSet<number>(setState);
-  const [arr, setArr] = useState<number[]>([]);
 
   useEffect(() => {
     console.log(st);
-    setArr(Array.from(st));
   }, [st]);
 
   return (
@@ -26,7 +24,7 @@ const SetDemo = () => {
             <Typography variant="h5">useSet Test</Typography>
             <Box m={2} />
             <Grid container spacing={2}>
-              {arr.map((elm) => (
+              {Array.from(st).map((elm) => (
                 <Grid key={elm} item>
                   {elm}
                 </Grid>

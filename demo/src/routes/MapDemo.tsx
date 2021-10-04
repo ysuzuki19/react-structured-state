@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { Box, Divider, Grid, Paper, Typography } from '@mui/material';
 
 // import { useMap } from 'react-structured-state';
@@ -11,11 +11,9 @@ import { mapState } from '../store/mapState';
 const MapDemo = () => {
   // const [mp, actionMp] = useMap<number>([1, 2, 3]);
   const [mp, actionMp] = useRecoilMap<string, number>(mapState);
-  const [arr, setArr] = useState<[string, number][]>([]);
 
   useEffect(() => {
     console.log(mp);
-    setArr(Array.from(mp));
   }, [mp]);
 
   return (
@@ -26,7 +24,7 @@ const MapDemo = () => {
             <Typography variant="h5">useMap Test</Typography>
             <Box m={2} />
             <Grid container spacing={2}>
-              {arr.map((elm) => (
+              {Array.from(mp).map((elm) => (
                 <Grid key={elm[0]} item>
                   {elm[0]}: {elm[1]}
                 </Grid>
