@@ -10,10 +10,12 @@
 import { useArray, useRecoilArray } from './array';
 import { useQueue, useRecoilQueue } from './queue';
 import { useSet, useRecoilSet } from './set';
+import { useMap, useRecoilMap } from './map';
 
 export { useArray, useRecoilArray };
 export { useQueue, useRecoilQueue };
 export { useSet, useRecoilSet };
+export { useMap, useRecoilMap };
 
 const StructuredState = {
   useArray,
@@ -22,6 +24,8 @@ const StructuredState = {
   useRecoilQueue,
   useSet,
   useRecoilSet,
+  useMap,
+  useRecoilMap,
 };
 
 export default StructuredState;
