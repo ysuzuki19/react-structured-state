@@ -1,7 +1,7 @@
 {
   "name": "react-structured-state",
   "description": "React hooks for handling structure(array) simply",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": {
     "name": "ysuzuki19",
     "url": "https://ysuzuki19.github.io"
@@ -27,8 +27,8 @@
   ],
   "private": false,
   "dependencies": {
-    "@types/node": "^16.10.2",
-    "@types/react": "^17.0.26",
+    "@types/node": "^16.10.3",
+    "@types/react": "^17.0.27",
     "@types/react-dom": "^17.0.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -73,6 +73,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "serve": "^12.0.1",
     "tslib": "^2.3.1",
-    "typedoc": "^0.22.4"
+    "typedoc": "^0.22.5"
   }
 }
