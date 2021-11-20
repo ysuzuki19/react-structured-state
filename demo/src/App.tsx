@@ -1,4 +1,4 @@
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import Root from './routes/Root';
 import ArrayDemo from './routes/ArrayDemo';
@@ -11,11 +11,13 @@ const App = (): JSX.Element => {
   return (
     <>
       <NavBar />
-      <Route exact path="/" component={Root} />
-      <Route exact path="/demo/array" component={ArrayDemo} />
-      <Route exact path="/demo/queue" component={QueueDemo} />
-      <Route exact path="/demo/set" component={SetDemo} />
-      <Route exact path="/demo/map" component={MapDemo} />
+      <Routes>
+        <Route path="/" element={<Root />} />
+        <Route path="/demo/array" element={<ArrayDemo />} />
+        <Route path="/demo/queue" element={<QueueDemo />} />
+        <Route path="/demo/set" element={<SetDemo />} />
+        <Route path="/demo/map" element={<MapDemo />} />
+      </Routes>
     </>
   );
 };

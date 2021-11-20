@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Box } from '@mui/system';
 import { Button, Divider, Grid, Typography } from '@mui/material';
 
@@ -9,9 +9,9 @@ interface LinkButtonProps {
   title: string;
 }
 const LinkButton = ({ to, title }: LinkButtonProps) => {
-  const history = useHistory();
+  const navigate = useNavigate();
   return (
-    <Button variant="contained" onClick={() => history.push(to)}>
+    <Button variant="contained" onClick={() => navigate(to)}>
       {title}
     </Button>
   );

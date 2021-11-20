@@ -1,7 +1,7 @@
 {
   "name": "react-structured-state",
   "description": "React hooks for handling structure(array) simply",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "author": {
     "name": "ysuzuki19",
     "url": "https://ysuzuki19.github.io"
@@ -32,16 +32,16 @@
     "@types/react-dom": "^17.0.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "recoil": "^0.4.1",
+    "recoil": "^0.5.2",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.4.3"
+    "typescript": "^4.5.2"
   },
   "scripts": {
     "test": "jest --env=jsdom --verbose",
     "build": "rollup -c",
     "prepublish": "npm test && cp ../README.md . && cp ../LICENSE .&& npm run build",
     "publish": "npm publish",
-    "predoc": "typedoc src/**/**",
+    "predoc": "typedoc lib/**/**",
     "doc": "serve docs"
   },
   "eslintConfig": {
@@ -71,7 +71,7 @@
     "rollup": "^2.58.0",
     "rollup-plugin-dts": "^4.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "serve": "^12.0.1",
+    "serve": "^13.0.2",
     "tslib": "^2.3.1",
     "typedoc": "^0.22.5"
   }

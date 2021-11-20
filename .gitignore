@@ -111,6 +111,7 @@ demo/.firebase/
 
 package/README.md
 package/LICENSE
+package/docs
 
 yarn.lock
 package-lock.json
