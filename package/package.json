@@ -1,7 +1,7 @@
 {
   "name": "react-structured-state",
   "description": "React hooks for handling structure(array) simply",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "author": {
     "name": "ysuzuki19",
     "url": "https://ysuzuki19.github.io"
@@ -27,12 +27,12 @@
   ],
   "private": false,
   "dependencies": {
-    "@types/node": "^16.10.3",
+    "@types/node": "^17.0.23",
     "@types/react": "^17.0.27",
     "@types/react-dom": "^17.0.9",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "recoil": "^0.5.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "recoil": "^0.7.0",
     "ts-jest": "^27.0.5",
     "typescript": "^4.5.2"
   },
