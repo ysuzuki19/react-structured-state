@@ -1,7 +1,7 @@
 {
   "name": "react-structured-state",
   "description": "React hooks for handling structure(array) simply",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "author": {
     "name": "ysuzuki19",
     "url": "https://ysuzuki19.github.io"
@@ -41,7 +41,6 @@
     "build": "rollup -c --bundleConfigAsCjs",
     "pack": "npm run build && npm pack",
     "prepublishOnly": "npm test && cp ../README.md . && cp ../LICENSE . && npm run build",
-    "publish": "npm publish",
     "predoc": "typedoc lib/**/**",
     "doc": "serve docs"
   },
