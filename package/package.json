@@ -39,7 +39,7 @@
   "scripts": {
     "test": "jest --env=jsdom --verbose",
     "build": "rollup -c",
-    "prepublish": "npm test && cp ../README.md . && cp ../LICENSE .&& npm run build",
+    "prepublishOnly": "npm test && cp ../README.md . && cp ../LICENSE . && npm run build",
     "publish": "npm publish",
     "predoc": "typedoc lib/**/**",
     "doc": "serve docs"
