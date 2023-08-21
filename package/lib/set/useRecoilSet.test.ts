@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook, act } from '@testing-library/react';
 import { atom, RecoilRoot } from 'recoil';
 
 import { useRecoilSet } from './useRecoilSet';
